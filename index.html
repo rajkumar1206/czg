@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <title>CSS Zen Garden</title>
+  <style>
+    html {
+    scroll-behavior: smooth;
+  }
+    * {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+  width: 0px;
+}
+  </style>
+</head>
+<body>
+  <div style="width: 512px; height: 512px; overflow: scroll;" id="main1">
+    <img src="./landscape-garden.jpg" alt="img broken" id="main">
+  </div>
+  <hr>
+  <button id="prev">prev</button>
+  <button id="next" onclick="myFunction()">next</button>
+  
+  <script>
+    const main = document.getElementById('main');
+    let i = 0;
+    main.scrollLeft += 512;
+    console.log(main);
+    var elmnt = document.getElementById("main1");
+
+    function myFunction() {
+      if (i == 0) {
+        elmnt.scrollTop += 518;
+      } else if ( i == 1 ) {
+        elmnt.scrollLeft += 518;
+      } else if (i== 2) {
+        elmnt.scrollTop -= 518;
+      } else {
+        elmnt.scrollLeft -= 518;
+      }
+      i = (i+1) % 4;
+    }
+  </script>
+</body>
+</html>
